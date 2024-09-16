@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AbzTest.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/yellow</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_inset</item>
+    </style>
+</resources>

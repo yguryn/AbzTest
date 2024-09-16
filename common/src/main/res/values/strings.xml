@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="photo_description">User Photo</string>
+    <string name="working_with_post_request">Working with POST request</string>
+    <string name="working_with_get_request">Working with GET request</string>
+    <string name="select_your_position">Select your position</string>
+    <string name="choose_how_you_want_add_photo">Choose how you want to add a photo</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="user_successfully_registered">User successfully registered</string>
+    <string name="email_already_registered">That email is already registered</string>
+    <string name="try_again">Try again</string>
+    <string name="got_it">Got it</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="upload_your_photo">Upload your photo</string>
+    <string name="required_field">Required field</string>
+    <string name="phone_example">+38 (XXX) XX - X - XX</string>
+    <string name="invalid_email_format">Invalid email format</string>
+    <string name="invalid_phone_format">Invalid phone format</string>
+    <string name="email">Email</string>
+    <string name="your_name">Your name</string>
+    <string name="phone">Phone</string>
+    <string name="upload">Upload</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="no_users_yet">There are no users yet</string>
+    <string name="fileprovider">com.abz.abztest.fileprovider</string>
+    <string name="requred_field">Required field</string>
+    <string name="name_less_then_2_chars">Name length cannot be less than 2 characters</string>
+    <string name="name_more_then_60_chars">Name length cannot be more than 60 characters</string>
+    <string name="number_should_start">Number should start with code of Ukraine +380</string>
+    <string name="uploaded_photo">Uploaded photo</string>
+    <string name="photo_may_not_be_grater_than_5_mb">The photo may not be greater than 5 Mbytes</string>
+    <string name="photo_minimum_size_is_70">Minimum size of photo 70x70px</string>
+    <string name="there_is_no_internet_connection">There is no internet connection</string>
+</resources>
