@@ -82,7 +82,6 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.gson)
     implementation(libs.gsonConverter)
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     //coil
     implementation(libs.coil.compose)

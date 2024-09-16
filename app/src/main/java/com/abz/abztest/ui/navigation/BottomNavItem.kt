@@ -9,11 +9,11 @@ sealed class BottomNavItem(
 ) {
     data object Users :
         BottomNavItem(
-            "users",
+            Screens.Users.route,
             "Users", R.drawable.users_img,
         )
 
     data object SignUp :
-        BottomNavItem("signUp", "Sign Up", R.drawable.sign_up_img)
+        BottomNavItem(Screens.SignUp.route, "Sign Up", R.drawable.sign_up_img)
 }
 

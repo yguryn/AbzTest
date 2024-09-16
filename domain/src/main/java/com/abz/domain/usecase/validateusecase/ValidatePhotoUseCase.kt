@@ -18,13 +18,13 @@ class ValidatePhotoUseCase(private val resourceManager: ResourceManager) {
                 errorMessage = resourceManager.getString(R.string.required_field)
             )
         }
-        if(isFileSizeValid(input, MIN_PHOTO_SIZE)) {
+        if(!isFileSizeValid(input, MIN_PHOTO_SIZE)) {
             return ValidationResult(
                 successful = false,
                 errorMessage = resourceManager.getString(R.string.photo_may_not_be_grater_than_5_mb)
             )
         }
-        if(isImageDimensionsValid(input, MIN_PHOTO_WIDTH, MIN_PHOTO_HEIGHT)) {
+        if(!isImageDimensionsValid(input, MIN_PHOTO_WIDTH, MIN_PHOTO_HEIGHT)) {
             return ValidationResult(
                 successful = false,
                 errorMessage = resourceManager.getString(R.string.photo_may_not_be_grater_than_5_mb)

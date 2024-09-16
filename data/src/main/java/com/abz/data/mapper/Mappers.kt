@@ -3,13 +3,11 @@ package com.abz.data.mapper
 import com.abz.data.model.PositionDTO
 import com.abz.data.model.RegisterUserResponseDTO
 import com.abz.data.model.UsersResponseDTO
+import com.abz.domain.model.Fails
 import com.abz.domain.model.Position
 import com.abz.domain.model.RegisterUserResponse
 import com.abz.domain.model.User
 import com.abz.domain.model.UsersResult
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 
 object Mappers {
     fun UsersResponseDTO.toUserResult(): UsersResult {
@@ -37,14 +35,21 @@ object Mappers {
     }
 
     fun RegisterUserResponseDTO.toRegisterUserResponse(): RegisterUserResponse {
+        val fails = if(this.fails == null) {
+            null
+        } else {
+            Fails(
+                email = this.fails.email,
+                name = this.fails.name,
+                phone = this.fails.phone,
+                photo = this.fails.photo,
+                positionId = this.fails.positionId
+            )
+        }
         return RegisterUserResponse(
             success = this.success,
             message = this.message,
-            fails = this.fails
+            fails = fails
         )
-    }
-
-    fun String.toRequestBody(): RequestBody {
-        return this.toRequestBody("text/plain".toMediaTypeOrNull())
     }
 }

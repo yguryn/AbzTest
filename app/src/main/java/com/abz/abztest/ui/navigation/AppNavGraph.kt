@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.abz.abztest.ui.NoInternetScreen
+import com.abz.abztest.ui.nointernet.NoInternetScreen
 import com.abz.abztest.ui.signup.EmailAlreadyRegisteredScreen
 import com.abz.abztest.ui.signup.SignUpScreen
 import com.abz.abztest.ui.signup.UserSuccessfullyRegisteredScreen

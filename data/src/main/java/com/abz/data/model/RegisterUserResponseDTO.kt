@@ -8,5 +8,5 @@ data class RegisterUserResponseDTO(
     @SerializedName("message")
     val message: String,
     @SerializedName("fails")
-    val fails: FailsDTO,
+    val fails: FailsDTO?,
 )

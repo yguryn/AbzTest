@@ -17,9 +17,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import javax.inject.Inject
 
@@ -43,7 +40,7 @@ class SignUpViewModel @Inject constructor(
         getPositions()
     }
 
-    fun onSubmit(
+    fun signUpUser(
         name: String,
         email: String,
         phone: String,
@@ -75,7 +72,7 @@ class SignUpViewModel @Inject constructor(
             email = email,
             phone = phone,
             positionId = positionId,
-            photo = createMultipartBodyFromUri(photoFile!!),
+            photo = photoFile!!,
         )
 
         viewModelScope.launch {
@@ -95,17 +92,11 @@ class SignUpViewModel @Inject constructor(
                             )
                         }
                     }
-
                     is Result.Error -> {
                     }
                 }
             }
         }
-    }
-
-    private fun createMultipartBodyFromUri(file: File): MultipartBody.Part {
-        val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        return MultipartBody.Part.createFormData("photo", file.name, requestFile)
     }
 
     private fun getPositions() {
@@ -115,7 +106,6 @@ class SignUpViewModel @Inject constructor(
                     is Result.Success -> {
                         _positions.value = result.data ?: emptyList()
                     }
-
                     is Result.Error -> {
                         _positions.value = emptyList()
                     }

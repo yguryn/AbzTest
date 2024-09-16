@@ -31,9 +31,7 @@ class MainActivity : ComponentActivity() {
         actionBar?.hide()
         setContent {
             val navController = rememberNavController()
-
             val networkStatus by viewModel.networkStatus.collectAsState(NetworkStatus.Available)
-
             if (networkStatus == NetworkStatus.Unavailable) {
                 navController.navigate(Screens.NoInternet.route)
             } else {

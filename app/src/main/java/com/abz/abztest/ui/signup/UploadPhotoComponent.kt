@@ -1,8 +1,5 @@
 package com.abz.abztest.ui.signup
 
-import android.content.Context
-import android.net.Uri
-import android.util.Log
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -17,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -29,7 +25,6 @@ import com.abz.abztest.ui.theme.ErrorRed
 import com.abz.abztest.ui.theme.Secondary
 import com.abz.abztest.ui.theme.Typography
 import java.io.File
-import java.io.FileOutputStream
 
 @Composable
 fun UploadPhotoComponent(
@@ -37,7 +32,6 @@ fun UploadPhotoComponent(
     photoError: String? = null,
     onUploadPhotoClicked: () -> Unit
 ) {
-    Log.d("TTT","UploadPhotoComponent")
     Column {
         Box(
             modifier = Modifier
@@ -82,25 +76,12 @@ fun UploadPhotoComponent(
         if (photoError != null) {
             Text(
                 text = photoError,
-                color = Color.Red,
+                color = ErrorRed,
                 style = Typography.bodySmall,
                 modifier = Modifier
-                    .align(Alignment.CenterHorizontally)
-                    .padding(top = 8.dp)
+                    .align(Alignment.Start)
+                    .padding(top = 8.dp, start = 16.dp)
             )
         }
     }
-}
-
-fun uriToFile(uri: Uri, context: Context): File? {
-    val inputStream = context.contentResolver.openInputStream(uri)
-    val file = File(context.cacheDir, "user_photo_${System.currentTimeMillis()}.jpg")
-    val outputStream = FileOutputStream(file)
-
-    inputStream?.use { input ->
-        outputStream.use { output ->
-            input.copyTo(output)
-        }
-    }
-    return if (file.exists()) file else null
 }

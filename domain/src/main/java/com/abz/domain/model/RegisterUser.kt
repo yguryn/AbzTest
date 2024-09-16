@@ -1,6 +1,6 @@
 package com.abz.domain.model
 
-import okhttp3.MultipartBody
+import java.io.File
 
 data class RegisterUser(
     val token: String = "",
@@ -8,5 +8,5 @@ data class RegisterUser(
     val email: String,
     val phone: String,
     val positionId: Int,
-    val photo: MultipartBody.Part
+    val photo: File
 )

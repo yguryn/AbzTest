@@ -1,6 +1,5 @@
 package com.abz.abztest.ui.users
 
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -47,8 +46,6 @@ import com.abz.domain.model.User
 @Composable
 fun UsersScreen(viewModel: UsersViewModel = hiltViewModel()) {
     val users by viewModel.users.collectAsState()
-
-    Log.d("TTT","UsersScreen")
 
     LaunchedEffect(Unit) {
         viewModel.loadUsers()
@@ -165,7 +162,6 @@ fun NoUsersYet(modifier: Modifier = Modifier) {
                 painter = painterResource(id = R.drawable.no_users_img),
                 contentDescription = stringResource(id = R.string.no_internet_connection)
             )
-
             Text(
                 text = stringResource(id = R.string.no_users_yet),
                 style = Typography.headlineLarge,

@@ -1,7 +1,5 @@
 package com.abz.domain.model
 
-import com.google.gson.annotations.SerializedName
-
 data class Fails(
     val email: List<String>,
     val name: List<String>,

@@ -1,7 +1,6 @@
 package com.abz.domain.utils
 
 object Const {
-
     const val BYTES_IN_MB = 1024
     const val MIN_PHOTO_HEIGHT = 70
     const val MIN_PHOTO_WIDTH = 70

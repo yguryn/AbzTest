@@ -24,14 +24,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.abz.abztest.ui.MainViewModel
 import com.abz.abztest.ui.theme.Black60
 import com.abz.abztest.ui.theme.BottomBarBackground
 import com.abz.abztest.ui.theme.IconColor
@@ -42,7 +40,6 @@ import com.abz.abztest.ui.theme.Typography
 fun AppNavigation(
     navController: NavHostController,
 ) {
-
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val showBottomBar = remember {
         mutableStateOf(true)
@@ -52,7 +49,6 @@ fun AppNavigation(
         Screens.SignUp.route -> showBottomBar.value = true
         else -> showBottomBar.value = false
     }
-
 
     Scaffold(
         bottomBar = {
